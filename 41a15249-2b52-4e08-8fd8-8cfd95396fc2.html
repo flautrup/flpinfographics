@@ -1,0 +1,126 @@
+<style>@shadow: {{settings.shadow}};
+
+.container {
+	width: 100%;
+	height:100%;
+	display: flex;
+//	align-items: baseline;
+	flex-direction: row;
+	font-size: 1.5em;
+}
+
+.dimension {
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+}
+
+.messure {
+    text-align: center; 
+    //justify-content: center; 
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.first when (@shadow = true) {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.second when (@shadow = true) {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.third when (@shadow = true) {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.fourth when (@shadow = true) {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.other when (@shadow = true) {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.first, .second, .third, .fourth, .other {
+	background-color: {{settings.color}};	
+	transition: width 1s;
+ 	border-top-left-radius: 500px;
+  	border-top-right-radius: 500px;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	align-self: flex-end;
+	text-align: center;
+	margin-right: 7px;
+}
+
+.text {
+ 	position:absolute; 
+ 	bottom:0px;
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+}
+
+.first {
+	width:{{data.rows[0].measures[0].getPercent()}}%;
+	height:95%;
+	order:1;
+}
+
+.second {
+	width:{{data.rows[1].measures[0].getPercent()}}%;
+	height:95%;
+	order: 2;
+}
+
+
+.third {
+	width:{{data.rows[2].measures[0].getPercent()}}%;
+	height:95%;
+	order:3;
+}
+
+
+.fourth {
+	width:{{data.rows[3].measures[0].getPercent()}}%;
+	height:95%;
+	order:4;
+}
+
+
+.other {
+	width:{{100-(data.rows[3].measures[0].getPercent()+data.rows[2].measures[0].getPercent()+data.rows[1].measures[0].getPercent()+data.rows[0].measures[0].getPercent())}}%;
+	height:95%;
+	order:5;
+}</style>
+<div><link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet" type="text/css">
+<div class="container">
+		<div class="first">
+			<div class="text">
+				{{data.rows[0].dimensions[0].qText}}
+			</div>
+		</div>
+		<div class="second">
+			<div class="text">
+				{{data.rows[1].dimensions[0].qText}}
+			</div>
+		</div>
+		<div class="third">
+			<div class="text">
+				{{data.rows[2].dimensions[0].qText}}
+			</div>
+		</div>
+		<div class="fourth">
+			<div class="text">
+				{{data.rows[3].dimensions[0].qText}}
+			</div>
+		</div>
+		<div class="other">
+			<div class="text">
+				Other
+			</div>
+		</div>
+</div>
+<div ng-if="data.rows.length === 0">
+	Please add dimensions and measures.
+</div></div>

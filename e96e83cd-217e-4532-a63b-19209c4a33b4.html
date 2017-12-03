@@ -1,0 +1,123 @@
+<style>@shadow: {{settings.shadow}};
+
+.container when (@shadow=true) {
+	width: 95%;
+	height: 95%;
+	display: flex;
+	align-items: stretch;
+	flex-direction: column;
+	font-size: 20pt;
+	border-radius: 15px;
+}
+
+.container when (@shadow=false) {
+	width: 95%;
+	height: 95%;
+	display: flex;
+	align-items: stretch;
+	flex-direction: column;
+	font-size: 20pt;
+	border-radius: 15px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dimension {
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+}
+
+.messure {
+	display:flex;
+    align-items: center; 
+    justify-content: center; 
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.othertext {
+	display:flex;
+    align-items: center; 
+    justify-content: center; 
+	font-family: 'Oswald', sans-serif;
+}
+
+.first {
+	height:{{data.rows[0].measures[0].getPercent()}}%;
+	background-color: {{settings.color}};
+	order:1;
+	transition: height 1s;
+	border-radius: 15px 15px 0px 0px;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	font-size: {{70+0.5*data.rows[0].measures[0].getPercent()}}%
+}
+
+.second {
+	height:{{data.rows[1].measures[0].getPercent()}}%;
+	order: 2;
+	transition: height 1s;
+	font-size: {{70+0.5*data.rows[1].measures[0].getPercent()}}%;
+	border-color: black;
+	border-width: 0px 2px 2px;
+	border-style: solid;
+}
+
+.third {
+	height:{{data.rows[2].measures[0].getPercent()}}%;
+	order:3;
+	background-color: {{settings.color}};
+	transition: height 1s;
+	font-size: {{70+0.5*data.rows[2].measures[0].getPercent()}}%;
+	border-color: black;
+	border-width: 0px 2px 2px;
+	border-style: solid;
+}
+
+.fourth {
+	height:{{data.rows[3].measures[0].getPercent()}}%;
+	order:4;
+	transition: height 1s;
+	font-size: {{70+0.5*data.rows[3].measures[0].getPercent()}}%;
+	border-color: black;
+	border-width: 0px 2px 2px;
+	border-style: solid;
+}
+
+
+.other {
+	height:{{98-(data.rows[3].measures[0].getPercent()+data.rows[2].measures[0].getPercent()+data.rows[1].measures[0].getPercent()+data.rows[0].measures[0].getPercent())}}%;
+	order:5;
+	background-color: {{settings.color}};
+	transition: height 1s;
+	border-color: black;
+	border-width: 0px 2px 2px;
+	border-style: solid;
+	border-radius: 0px 0px 15px 15px;
+	font-size: 50%;
+}</style>
+<div><link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet" type="text/css">
+<div class="container">
+	<div class="first">
+		<div class="dimension">{{data.rows[0].dimensions[0].qText}}</div>
+		<div class="messure">{{data.rows[0].measures[0].qText}}</div>
+	</div>
+	<div class="second" ng-if="data.rows.length > 1">
+		<div class="dimension">{{data.rows[1].dimensions[0].qText}}</div>
+		<div class="messure">{{data.rows[1].measures[0].qText}}</div>
+	</div>
+	<div class="third" ng-if="data.rows.length > 2">
+		<div class="dimension">{{data.rows[2].dimensions[0].qText}}</div>
+		<div class="messure">{{data.rows[2].measures[0].qText}}</div>
+	</div>
+	<div class="fourth" ng-if="data.rows.length > 3">
+		<div class="dimension">{{data.rows[3].dimensions[0].qText}}</div>
+		<div class="messure">{{data.rows[3].measures[0].qText}}</div>
+	</div>
+	<div class="other" ng-if="data.rows.length > 4">
+		<div class="othertext">Other</div>
+	</div>
+</div>
+<div ng-if="data.rows.length === 0">
+	Please add dimensions and measures.
+</div></div>

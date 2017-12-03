@@ -1,0 +1,255 @@
+<style>@shadow: {{settings.shadow}};
+
+.container {
+	width: 100%;
+	height:100%;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	font-size: 20pt;
+}
+
+.dimension {
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+}
+
+.messure {
+	display:flex;
+    align-items: center; 
+    justify-content: center; 
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.othertext {
+	display:flex;
+    align-items: center; 
+    justify-content: center; 
+	font-family: 'Oswald', sans-serif;
+}
+
+.first when (@shadow = true) {
+	width:{{data.rows[0].measures[0].getPercent()}}%;
+	height:{{data.rows[0].measures[0].getPercent()}}%;
+	padding-top: {{0.5*data.rows[0].measures[0].getPercent()}}%;
+	padding-bottom: {{0.5*data.rows[0].measures[0].getPercent()}}%;
+	background-color: {{settings.color}};
+	order:1;
+	transition: width 1s;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	display:flex;
+	flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+	margin-right: 10px;
+	font-size: {{50+0.5*data.rows[0].measures[0].getPercent()}}%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.first when (@shadow = false) {
+	width:{{data.rows[0].measures[0].getPercent()}}%;
+	height:{{data.rows[0].measures[0].getPercent()}}%;
+	padding-top: {{0.5*data.rows[0].measures[0].getPercent()}}%;
+	padding-bottom: {{0.5*data.rows[0].measures[0].getPercent()}}%;
+	background-color: {{settings.color}};
+	order:1;
+	transition: width 1s;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	display:flex;
+	flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+	margin-right: 10px;
+	font-size: {{50+0.5*data.rows[0].measures[0].getPercent()}}%;
+}
+
+.second when (@shadow = false) {
+	width:{{data.rows[1].measures[0].getPercent()}}%;
+	height:{{data.rows[1].measures[0].getPercent()}}%;
+	font-size: {{50+0.5*data.rows[1].measures[0].getPercent()}}%;
+	padding-top: {{0.5*data.rows[1].measures[0].getPercent()}}%;
+	padding-bottom: {{0.5*data.rows[1].measures[0].getPercent()}}%;
+	order: 2;
+	background-color: {{settings.color}};
+	transition: width 1s;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	display:flex;
+	flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+	margin-right: 10px;
+}
+
+.second when (@shadow = true) {
+	width:{{data.rows[1].measures[0].getPercent()}}%;
+	height:{{data.rows[1].measures[0].getPercent()}}%;
+	font-size: {{50+0.5*data.rows[1].measures[0].getPercent()}}%;
+	padding-top: {{0.5*data.rows[1].measures[0].getPercent()}}%;
+	padding-bottom: {{0.5*data.rows[1].measures[0].getPercent()}}%;
+	order: 2;
+	background-color: {{settings.color}};
+	transition: width 1s;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	display:flex;
+	flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+	margin-right: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.third when (@shadow = false) {
+	width:{{data.rows[2].measures[0].getPercent()}}%;
+	height:{{data.rows[2].measures[0].getPercent()}}%;
+	font-size: {{50+0.5*data.rows[2].measures[0].getPercent()}}%;
+	padding-top: {{0.5*data.rows[2].measures[0].getPercent()}}%;
+	padding-bottom: {{0.5*data.rows[2].measures[0].getPercent()}}%;
+	order:3;
+	background-color: {{settings.color}};
+	transition: width 1s;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	display:flex;
+	flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+	margin-right: 10px;
+}
+
+.third when (@shadow = true) {
+	width:{{data.rows[2].measures[0].getPercent()}}%;
+	height:{{data.rows[2].measures[0].getPercent()}}%;
+	font-size: {{50+0.5*data.rows[2].measures[0].getPercent()}}%;
+	padding-top: {{0.5*data.rows[2].measures[0].getPercent()}}%;
+	padding-bottom: {{0.5*data.rows[2].measures[0].getPercent()}}%;
+	order:3;
+	background-color: {{settings.color}};
+	transition: width 1s;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	display:flex;
+	flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+	margin-right: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.fourth when (@shadow = false) {
+	width:{{data.rows[3].measures[0].getPercent()}}%;
+	height:{{data.rows[3].measures[0].getPercent()}}%;
+	font-size: {{50+0.5*data.rows[3].measures[0].getPercent()}}%;
+	padding-top: {{0.5*data.rows[3].measures[0].getPercent()}}%;
+	padding-bottom: {{0.5*data.rows[3].measures[0].getPercent()}}%;
+	order:4;
+	transition: width 1s;
+	background-color: {{settings.color}};
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	display:flex;
+	flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+	margin-right: 10px;
+}
+
+.fourth when (@shadow = true) {
+	width:{{data.rows[3].measures[0].getPercent()}}%;
+	height:{{data.rows[3].measures[0].getPercent()}}%;
+	font-size: {{50+0.5*data.rows[3].measures[0].getPercent()}}%;
+	padding-top: {{0.5*data.rows[3].measures[0].getPercent()}}%;
+	padding-bottom: {{0.5*data.rows[3].measures[0].getPercent()}}%;
+	order:4;
+	transition: width 1s;
+	background-color: {{settings.color}};
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	display:flex;
+	flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+	margin-right: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.other when (@shadow = false) {
+	width:{{100-(data.rows[3].measures[0].getPercent()+data.rows[2].measures[0].getPercent()+data.rows[1].measures[0].getPercent()+data.rows[0].measures[0].getPercent())}}%;
+	padding-bottom: {{0.5*(100-(data.rows[3].measures[0].getPercent()+data.rows[2].measures[0].getPercent()+data.rows[1].measures[0].getPercent()+data.rows[0].measures[0].getPercent()))}}%;
+	padding-top: {{0.5*(100-(data.rows[3].measures[0].getPercent()+data.rows[2].measures[0].getPercent()+data.rows[1].measures[0].getPercent()+data.rows[0].measures[0].getPercent()))}}%;
+	order:5;
+	background-color: {{settings.color}};
+	transition: width 1s;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	display:flex;
+    align-items: center;
+    justify-content: center;
+	margin-right: ,10px;
+	font-size: 40%;
+}
+
+.other when (@shadow = true) {
+	width:{{100-(data.rows[3].measures[0].getPercent()+data.rows[2].measures[0].getPercent()+data.rows[1].measures[0].getPercent()+data.rows[0].measures[0].getPercent())}}%;
+	padding-bottom: {{0.5*(100-(data.rows[3].measures[0].getPercent()+data.rows[2].measures[0].getPercent()+data.rows[1].measures[0].getPercent()+data.rows[0].measures[0].getPercent()))}}%;
+	padding-top: {{0.5*(100-(data.rows[3].measures[0].getPercent()+data.rows[2].measures[0].getPercent()+data.rows[1].measures[0].getPercent()+data.rows[0].measures[0].getPercent()))}}%;
+	order:5;
+	background-color: {{settings.color}};
+	transition: width 1s;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	display:flex;
+    align-items: center;
+    justify-content: center;
+	margin-right: ,10px;
+	font-size: 40%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}</style>
+<div><link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet" type="text/css">
+<div class="container">
+	<div class="first">
+		<div class="dimension">{{data.rows[0].dimensions[0].qText}}</div>
+		<div class="messure">{{data.rows[0].measures[0].qText}}</div>
+	</div>
+	<div class="second">
+		<div class="dimension">{{data.rows[1].dimensions[0].qText}}</div>
+		<div class="messure">{{data.rows[1].measures[0].qText}}</div>
+	</div>
+	<div class="third">
+		<div class="dimension">{{data.rows[2].dimensions[0].qText}}</div>
+		<div class="messure">{{data.rows[2].measures[0].qText}}</div>
+	</div>
+	<div class="fourth">
+		<div class="dimension">{{data.rows[3].dimensions[0].qText}}</div>
+		<div class="messure">{{data.rows[3].measures[0].qText}}</div>
+	</div>
+	<div class="other"><h2>Other</h2></div>
+</div>
+<div ng-if="data.rows.length === 0">
+	Please add dimensions and measures.
+</div></div>
