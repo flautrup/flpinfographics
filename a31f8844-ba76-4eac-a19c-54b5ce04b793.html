@@ -28,14 +28,8 @@
 	font-family: 'Oswald', sans-serif;
 }
 
-.first when (@shadow = true) {
-	width:{{data.rows[0].measures[0].getPercent()}}%;
-	height:{{data.rows[0].measures[0].getPercent()}}%;
-	padding-top: {{0.5*data.rows[0].measures[0].getPercent()}}%;
-	padding-bottom: {{0.5*data.rows[0].measures[0].getPercent()}}%;
-	background-color: {{settings.color}};
-	order:1;
-	transition: width 1s;
+.first, .second, .third, .fourth, .other {
+	transition: width 2s, height 4s;
 	border-radius: 20px;
 	border-color: black;
 	border-width: 2px;
@@ -45,6 +39,15 @@
     align-items: center; 
     justify-content: center; 
 	margin-right: 10px;
+}
+
+.first when (@shadow = true) {
+	width:{{data.rows[0].measures[0].getPercent()}}%;
+	height:{{data.rows[0].measures[0].getPercent()}}%;
+	padding-top: {{0.5*data.rows[0].measures[0].getPercent()}}%;
+	padding-bottom: {{0.5*data.rows[0].measures[0].getPercent()}}%;
+	background-color: {{settings.color}};
+	order:1;
 	font-size: {{50+0.5*data.rows[0].measures[0].getPercent()}}%;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -56,16 +59,6 @@
 	padding-bottom: {{0.5*data.rows[0].measures[0].getPercent()}}%;
 	background-color: {{settings.color}};
 	order:1;
-	transition: width 1s;
-	border-radius: 20px;
-	border-color: black;
-	border-width: 2px;
-	border-style: solid;
-	display:flex;
-	flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-	margin-right: 10px;
 	font-size: {{50+0.5*data.rows[0].measures[0].getPercent()}}%;
 }
 
@@ -77,16 +70,6 @@
 	padding-bottom: {{0.5*data.rows[1].measures[0].getPercent()}}%;
 	order: 2;
 	background-color: {{settings.color}};
-	transition: width 1s;
-	border-radius: 20px;
-	border-color: black;
-	border-width: 2px;
-	border-style: solid;
-	display:flex;
-	flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-	margin-right: 10px;
 }
 
 .second when (@shadow = true) {
@@ -97,16 +80,6 @@
 	padding-bottom: {{0.5*data.rows[1].measures[0].getPercent()}}%;
 	order: 2;
 	background-color: {{settings.color}};
-	transition: width 1s;
-	border-radius: 20px;
-	border-color: black;
-	border-width: 2px;
-	border-style: solid;
-	display:flex;
-	flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-	margin-right: 10px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -118,16 +91,6 @@
 	padding-bottom: {{0.5*data.rows[2].measures[0].getPercent()}}%;
 	order:3;
 	background-color: {{settings.color}};
-	transition: width 1s;
-	border-radius: 20px;
-	border-color: black;
-	border-width: 2px;
-	border-style: solid;
-	display:flex;
-	flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-	margin-right: 10px;
 }
 
 .third when (@shadow = true) {
@@ -138,16 +101,6 @@
 	padding-bottom: {{0.5*data.rows[2].measures[0].getPercent()}}%;
 	order:3;
 	background-color: {{settings.color}};
-	transition: width 1s;
-	border-radius: 20px;
-	border-color: black;
-	border-width: 2px;
-	border-style: solid;
-	display:flex;
-	flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-	margin-right: 10px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -158,17 +111,7 @@
 	padding-top: {{0.5*data.rows[3].measures[0].getPercent()}}%;
 	padding-bottom: {{0.5*data.rows[3].measures[0].getPercent()}}%;
 	order:4;
-	transition: width 1s;
 	background-color: {{settings.color}};
-	border-radius: 20px;
-	border-color: black;
-	border-width: 2px;
-	border-style: solid;
-	display:flex;
-	flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-	margin-right: 10px;
 }
 
 .fourth when (@shadow = true) {
@@ -178,17 +121,7 @@
 	padding-top: {{0.5*data.rows[3].measures[0].getPercent()}}%;
 	padding-bottom: {{0.5*data.rows[3].measures[0].getPercent()}}%;
 	order:4;
-	transition: width 1s;
 	background-color: {{settings.color}};
-	border-radius: 20px;
-	border-color: black;
-	border-width: 2px;
-	border-style: solid;
-	display:flex;
-	flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-	margin-right: 10px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -199,16 +132,6 @@
 	padding-top: {{0.5*(100-(data.rows[3].measures[0].getPercent()+data.rows[2].measures[0].getPercent()+data.rows[1].measures[0].getPercent()+data.rows[0].measures[0].getPercent()))}}%;
 	order:5;
 	background-color: {{settings.color}};
-	transition: width 1s;
-	border-radius: 20px;
-	border-color: black;
-	border-width: 2px;
-	border-style: solid;
-	display:flex;
-    align-items: center;
-    justify-content: center;
-	margin-right: ,10px;
-	font-size: 40%;
 }
 
 .other when (@shadow = true) {
@@ -217,16 +140,6 @@
 	padding-top: {{0.5*(100-(data.rows[3].measures[0].getPercent()+data.rows[2].measures[0].getPercent()+data.rows[1].measures[0].getPercent()+data.rows[0].measures[0].getPercent()))}}%;
 	order:5;
 	background-color: {{settings.color}};
-	transition: width 1s;
-	border-radius: 20px;
-	border-color: black;
-	border-width: 2px;
-	border-style: solid;
-	display:flex;
-    align-items: center;
-    justify-content: center;
-	margin-right: ,10px;
-	font-size: 40%;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }</style>
 <div><link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet" type="text/css">
