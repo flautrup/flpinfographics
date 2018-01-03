@@ -1,0 +1,96 @@
+<style>.vizheader {
+	font-family: 'Pacifico', cursive;
+	font-size: 35px;
+	text-align: center;
+}
+
+.chart {
+    height:90%;
+	width: 100%;
+}
+
+.container {
+	width: 100%;
+	height: 95%;
+ 	display: flex;
+	flex-direction: row;
+}
+
+.block {
+  margin: 1px;
+  transition: all 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+	font-size: 24px;
+	transform: rotate(90deg);
+	font-family: 'Raleway';
+	font-weight: 600;
+}
+
+@keyframes colorchange-0 {
+    from {background-color: white;}
+    to {background-color: {{settings.color1}};}
+}
+
+.color-0 {
+	background-color: {{settings.color1}};
+	animation-name: colorchange-0;
+    animation-duration: 1s;
+	animation-timing-function: ease-in;
+}
+
+@keyframes colorchange-1 {
+    from {background-color: white;}
+    to {background-color: {{settings.color2}};}
+}
+
+.color-1 {
+	background-color: {{settings.color2}};
+	animation-name: colorchange-1;
+    animation-duration: 1.1s;
+	animation-timing-function: ease-in;
+}
+
+@keyframes colorchange-2 {
+    from {background-color: white;}
+    to {background-color: {{settings.color3}};}
+}
+
+.color-2 {
+	background-color: {{settings.color3}};
+	animation-name: colorchange-2;
+    animation-duration: 1.2s;
+	animation-timing-function: ease-in;
+}
+
+@keyframes colorchange-3 {
+    from {background-color: white;}
+    to {background-color: {{settings.color3}};}
+}
+
+.color-3 {
+	background-color: {{settings.color4}};
+	animation-name: colorchange-3;
+    animation-duration: 1.3s;
+	animation-timing-function: ease-in;
+}
+
+</style>
+<div><link href="https://fonts.googleapis.com/css?family=Ubuntu:500,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Pacifico|Raleway:400,600" rel="stylesheet">
+<div class="vizheader">
+ 	{{settings.viztitle}}
+</div>
+<div class="chart">
+	<div class="container">
+  		<div ng-repeat="row in data.rows track by $index" title="{{row.dimensions[0].qText}}" class="block" ng-style="{'width': row.measures[0].getPercent()+'%', 'height': '100%'}" ng-class="'color-'+$index">
+		<div class="header">
+			{{row.dimensions[0].qText}}
+		</div>
+		</div>
+	</div>
+</div></div>

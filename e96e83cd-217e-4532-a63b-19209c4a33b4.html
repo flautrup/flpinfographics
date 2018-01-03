@@ -1,8 +1,14 @@
 <style>@shadow: {{settings.shadow}};
 
+.header {
+	font-family: 'Pacifico', cursive;
+	font-size: 35px;
+	text-align: center;
+}
+
 .container when (@shadow=true) {
 	width: 95%;
-	height: 95%;
+	height: 85%;
 	display: flex;
 	align-items: stretch;
 	flex-direction: column;
@@ -12,7 +18,7 @@
 
 .container when (@shadow=false) {
 	width: 95%;
-	height: 95%;
+	height: 85%;
 	display: flex;
 	align-items: stretch;
 	flex-direction: column;
@@ -23,7 +29,8 @@
 
 .dimension {
 	text-align: center;
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 600;
 }
 
 .messure {
@@ -31,13 +38,14 @@
     align-items: center; 
     justify-content: center; 
 	font-family: 'Ubuntu', sans-serif;
+	font-weight: 300;
 }
 
 .othertext {
 	display:flex;
     align-items: center; 
     justify-content: center; 
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Raleway', sans-serif;
 }
 
 .first {
@@ -95,8 +103,11 @@
 	border-radius: 0px 0px 15px 15px;
 	font-size: 50%;
 }</style>
-<div><link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet" type="text/css">
+<div><link href="https://fonts.googleapis.com/css?family=Ubuntu:500,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Pacifico|Raleway:400,600" rel="stylesheet">
+<div class="header">
+ 	{{settings.viztitle}}
+</div>
 <div class="container">
 	<div class="first">
 		<div class="dimension">{{data.rows[0].dimensions[0].qText}}</div>

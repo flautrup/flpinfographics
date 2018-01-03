@@ -1,16 +1,25 @@
-<style>.container {
+<style>.header {
+	font-family: 'Pacifico', cursive;
+	font-size: 35px;
+	text-align: center;
+}
+
+.container {
 	width: 100%;
-	height:100%;
-	//display: flex;
-	//flex-direction: row;
-	//vertical-align: text-bottom
-	position:absolute; 
- 	bottom:0px;;
+	//height:100%;
+	display: flex;
+	vertical-align: flex-end;
+	justify-content: space-between;
+	flex-direction: row;
 	font-size: {{settings.fontsize}};
 }
 
 .first, .second, .third, .fourth, .other {
+	line-height:{{settings.fontsize}};
+	display: flex;
 	transition: font-size 1s;
+	color: {{settings.color}};
+	//background: green;
 }
 
 .first {
@@ -32,21 +41,17 @@
 .other {
  font-size: {{100 -data.rows[0].measures[0].getPercent()-data.rows[1].measures[0].getPercent()-data.rows[2].measures[0].getPercent()-data.rows[3].measures[0].getPercent()}}%;
 }</style>
-<div>
-
-
+<div><link href="https://fonts.googleapis.com/css?family=Ubuntu:500,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Pacifico|Raleway:400,600" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-
-
+<div class="header">
+ 	{{settings.viztitle}}
+</div>
 <div class="container">
 	<i class="material-icons first">{{settings.icon1}}</i>
 	<i class="material-icons second">{{settings.icon2}}</i>
 	<i class="material-icons third">{{settings.icon3}}</i>
 	<i class="material-icons fourth">{{settings.icon4}}</i>
 	<i class="material-icons other">{{settings.iconOther}}</i>
-</div>
-
-
-
-</div>
+</div></div>

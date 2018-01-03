@@ -1,5 +1,11 @@
 <style>@shadow: {{settings.shadow}};
 
+.header {
+	font-family: 'Pacifico', cursive;
+	font-size: 35px;
+	text-align: center;
+}
+
 .container {
 	width: 100%;
 	height:100%;
@@ -11,7 +17,8 @@
 
 .dimension {
 	text-align: center;
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 600;
 }
 
 .messure {
@@ -19,13 +26,15 @@
     align-items: center; 
     justify-content: center; 
 	font-family: 'Ubuntu', sans-serif;
+	font-weight: 300;
 }
 
-.othertext {
+.other {
 	display:flex;
     align-items: center; 
     justify-content: center; 
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 600;
 }
 
 .first, .second, .third, .fourth, .other {
@@ -142,8 +151,11 @@
 	background-color: {{settings.color}};
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }</style>
-<div><link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet" type="text/css">
+<div><link href="https://fonts.googleapis.com/css?family=Ubuntu:500,300" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Pacifico|Raleway:400,600" rel="stylesheet">
+<div class="header">
+ 	{{settings.viztitle}}
+</div>
 <div class="container">
 	<div class="first">
 		<div class="dimension">{{data.rows[0].dimensions[0].qText}}</div>
